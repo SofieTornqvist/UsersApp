@@ -1,6 +1,10 @@
 
 const Users = () => {
-    <p>Users</p>
+    return (
+        <div>
+            <p>Users</p>
+        </div>
+    )
 }  
 
 export default Users
