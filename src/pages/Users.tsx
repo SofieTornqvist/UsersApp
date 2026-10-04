@@ -18,7 +18,7 @@ const Users = () => {
     
     return (
         <div>
-            <p>Users</p>
+            <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
     )
 }  
