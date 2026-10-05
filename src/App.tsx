@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Users from './pages/Users'
 import Home from './pages/Home'
 import Navigation from './components/navigation/Navigation'
-import './App.css'
+
 
 function App() {
   
