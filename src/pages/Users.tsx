@@ -19,6 +19,7 @@ const Users = () => {
 
         if (isLoading) return <p>Loading..</p>
         if (error) return <p>{error.message}</p>
+        if (!data) return <p>There are no users to display.</p>
     
     return (
         <div>
