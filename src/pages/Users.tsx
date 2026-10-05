@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
+import UserList from "../components/Users/UserList"
 
 const Users = () => {
         const { data, isLoading, error } = useQuery({
@@ -14,13 +15,13 @@ const Users = () => {
                 },
                 staleTime: 10 * 60 * 1000
         })
-        
+
         if (isLoading) return <p>Loading..</p>
         if (error) return <p>{error.message}</p>
     
     return (
         <div>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+            <UserList users={data} />
         </div>
     )
 }  
