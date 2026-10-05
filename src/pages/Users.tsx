@@ -22,9 +22,13 @@ const Users = () => {
         if (!data) return <p>There are no users to display.</p>
     
     return (
-        <div>
+        <main className="min-h-screen bg-slate-50 px-8 py-10 flex flex-col items-center">
+            <h1 className="mb-8 text-3xl font-bold text-slate-800">
+                Users
+            </h1>
+
             <UserList users={data} />
-        </div>
+        </main>
     )
 }  
 
