@@ -1,6 +1,7 @@
 import UserCard from "./UserCard"
+import type { User } from "../../types/User"
 
-interface UserListProps {
+type UserListProps = {
     users: User[]
 }
 

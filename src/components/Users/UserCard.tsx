@@ -1,4 +1,6 @@
-interface UserCardProps {
+import type { User } from "../../types/User"
+
+type UserCardProps = {
     user: User
 }
 
