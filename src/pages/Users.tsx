@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import UserList from "../components/Users/UserList"
+import LoadingMessage from '../components/ui/LoadingMessage'
 import type { User } from "../types/User"
 
 const Users = () => {
@@ -17,7 +18,7 @@ const Users = () => {
                 staleTime: 10 * 60 * 1000
         })
 
-        if (isLoading) return <p>Loading..</p>
+        if (isLoading) return <LoadingMessage />
         if (error) return <p>{error.message}</p>
         if (!data) return <p>There are no users to display.</p>
     
