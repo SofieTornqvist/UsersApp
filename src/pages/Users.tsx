@@ -8,11 +8,13 @@ const Users = () => {
                     headers: {
                         "x-api-key": import.meta.env.VITE_API_KEY
                     }
-            }) 
-        if (!res.ok) throw new Error ("Could not fetch users")
+                }) 
+                if (!res.ok) throw new Error ("Could not fetch users")
                     return res.json()
-            }
+                },
+                staleTime: 10 * 60 * 1000
         })
+        
         if (isLoading) return <p>Loading..</p>
         if (error) return <p>{error.message}</p>
     
