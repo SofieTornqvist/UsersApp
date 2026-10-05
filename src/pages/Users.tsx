@@ -2,13 +2,14 @@ import { useQuery } from "@tanstack/react-query"
 import UserList from "../components/Users/UserList"
 import LoadingMessage from '../components/ui/LoadingMessage'
 import ErrorMessage from '../components/ui/ErrorMessage'
+import EmptyMessage from '../components/ui/EmptyMessage'
 import type { User } from "../types/User"
 
 const Users = () => {
         const { data, isLoading, error } = useQuery<User[]>({
             queryKey: ['users'],
             queryFn: async () => {
-                const res = await fetch("https://api-userapi.onrender.com/api/users/getUsrs", {
+                const res = await fetch("https://api-userapi.onrender.com/api/users/getUsers", {
                     headers: {
                         "x-api-key": import.meta.env.VITE_API_KEY
                     }
@@ -21,7 +22,7 @@ const Users = () => {
 
         if (isLoading) return <LoadingMessage />
         if (error) return <ErrorMessage />
-        if (!data) return <p>There are no users to display.</p>
+        if (!data || data.length === 0) { return <EmptyMessage />}
     
     return (
         <main className="min-h-screen bg-slate-50 px-8 py-10 flex flex-col items-center">
