@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
 import UserList from "../components/Users/UserList"
+import type { User } from "../types/User"
 
 const Users = () => {
-        const { data, isLoading, error } = useQuery({
+        const { data, isLoading, error } = useQuery<User[]>({
             queryKey: ['users'],
             queryFn: async () => {
                 const res = await fetch("https://api-userapi.onrender.com/api/users/getUsers", {
