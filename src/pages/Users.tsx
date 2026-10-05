@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import UserList from "../components/Users/UserList"
+import UserList from "../components/users/UserList"
 import LoadingMessage from '../components/ui/LoadingMessage'
 import ErrorMessage from '../components/ui/ErrorMessage'
 import EmptyMessage from '../components/ui/EmptyMessage'
